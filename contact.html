@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ｜belWorks（ベルワークス）</title>
+<meta name="description" content="belWorksへのお問い合わせ・ご相談はこちら。何を作るか決まっていなくても大丈夫です。">
+<style>
+  :root{
+    --ink:#263140;--mut:#5b6673;--line:#e6ebf3;--soft:#f4f7fd;--soft2:#fafbff;
+    --teal:#57c7d4;--blue:#5b8ef0;--purple:#7d6cf0;--purple-d:#6a5cf0;
+    --grad:linear-gradient(120deg,#5b8ef0,#7d6cf0);
+    --shadow:0 18px 46px rgba(91,142,240,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);line-height:1.85;background:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .gtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  /* header */
+  header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:30}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+  .nav img{height:38px;display:block}
+  .nav .menu{display:flex;gap:26px;font-size:.9rem;font-weight:600;color:var(--mut)}
+  .nav .menu a:hover{color:var(--purple-d)}
+  .nav .navcta{background:var(--grad);color:#fff;padding:9px 20px;border-radius:10px;font-size:.88rem;font-weight:700}
+  @media(max-width:820px){.nav .menu{display:none}}
+
+  /* page hero */
+  .pagehero{padding:60px 0 52px;background:radial-gradient(800px 300px at 90% 0%, rgba(125,108,240,.07),transparent 60%),#fff;border-bottom:1px solid var(--line)}
+  .pagehero .eyebrow{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.14em;color:var(--purple-d);background:var(--soft);padding:5px 14px;border-radius:999px;margin-bottom:14px}
+  .pagehero h1{font-size:2.2rem;font-weight:800;line-height:1.4;margin-bottom:12px}
+  .pagehero p{color:var(--mut);font-size:1.02rem;max-width:560px}
+
+  /* form section */
+  .formsec{padding:70px 0 90px}
+  .formwrap{max-width:660px;margin:0 auto}
+
+  .points{display:flex;gap:16px;margin-bottom:44px;flex-wrap:wrap}
+  .point{flex:1;min-width:180px;background:var(--soft);border-radius:12px;padding:18px 20px}
+  .point .ic{font-size:1.5rem;margin-bottom:6px}
+  .point p{font-size:.88rem;color:var(--mut);line-height:1.7}
+  .point strong{display:block;font-size:.95rem;color:var(--ink);margin-bottom:4px}
+
+  form{display:flex;flex-direction:column;gap:22px}
+  .fgroup{display:flex;flex-direction:column;gap:6px}
+  label{font-size:.88rem;font-weight:700;color:var(--ink)}
+  label .opt{font-weight:400;color:var(--mut);font-size:.8rem;margin-left:6px}
+  input,textarea,select{
+    width:100%;border:1.5px solid var(--line);border-radius:10px;
+    padding:12px 16px;font-size:.95rem;font-family:inherit;color:var(--ink);
+    background:#fff;transition:.2s;outline:none
+  }
+  input:focus,textarea:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(91,142,240,.12)}
+  textarea{resize:vertical;min-height:130px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:600px){.row2{grid-template-columns:1fr}}
+
+  .submit{background:var(--grad);color:#fff;font-weight:800;font-size:1rem;padding:15px 0;border:none;border-radius:12px;cursor:pointer;box-shadow:0 10px 24px rgba(107,92,240,.28);transition:.2s;width:100%}
+  .submit:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(107,92,240,.4)}
+  .note{font-size:.82rem;color:var(--mut);text-align:center;margin-top:6px}
+
+  /* thanks */
+  .thanks{display:none;text-align:center;padding:60px 20px}
+  .thanks .ic{font-size:3rem;margin-bottom:16px}
+  .thanks h2{font-size:1.6rem;font-weight:800;margin-bottom:12px}
+  .thanks p{color:var(--mut);margin-bottom:28px}
+  .backbtn{display:inline-block;background:var(--grad);color:#fff;font-weight:700;padding:12px 28px;border-radius:10px}
+
+  /* footer */
+  footer{background:#1e2738;color:rgba(255,255,255,.75);padding:44px 0 36px;font-size:.88rem;text-align:center}
+  footer img{height:30px;margin-bottom:14px;display:inline-block}
+  footer p{margin-top:6px;opacity:.7}
+  footer a{color:rgba(255,255,255,.6)}
+  footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav class="nav">
+      <a href="index.html"><img src="belworks-color.png" alt="belWorks"></a>
+      <div class="menu">
+        <a href="index.html#wheels">サービス</a>
+        <a href="price.html">料金</a>
+        <a href="index.html#proof">実績</a>
+        <a href="contact.html">お問い合わせ</a>
+      </div>
+      <a href="contact.html" class="navcta">無料で相談する</a>
+    </nav>
+  </div>
+</header>
+
+<div class="pagehero">
+  <div class="wrap">
+    <div class="eyebrow">CONTACT</div>
+    <h1>まずは、<span class="gtext">困っていること</span>を<br>聞かせてください。</h1>
+    <p>何を作るか決まっていなくて大丈夫です。実物をお見せしながら、一緒に考えます。無理な売り込みはしません。</p>
+  </div>
+</div>
+
+<section class="formsec">
+  <div class="wrap">
+    <div class="formwrap">
+
+      <div class="points">
+        <div class="point"><div class="ic">💬</div><strong>何でも相談OK</strong><p>「こんなこと頼んでいいのか」と思うようなことでも気軽にどうぞ</p></div>
+        <div class="point"><div class="ic">⚡</div><strong>2営業日以内に返信</strong><p>まずはメールにてご連絡いたします</p></div>
+        <div class="point"><div class="ic">🎁</div><strong>初回相談は無料</strong><p>ヒアリング・方向性の整理まで費用はかかりません</p></div>
+      </div>
+
+      <div id="formarea">
+        <form id="contactForm" action="https://formspree.io/f/XXXXXXXX" method="POST">
+          <div class="row2">
+            <div class="fgroup">
+              <label for="org">法人名・屋号 <span class="opt">任意</span></label>
+              <input type="text" id="org" name="org" placeholder="株式会社〇〇">
+            </div>
+            <div class="fgroup">
+              <label for="name">お名前 <span class="opt">必須</span></label>
+              <input type="text" id="name" name="name" required placeholder="山田 太郎">
+            </div>
+          </div>
+          <div class="fgroup">
+            <label for="email">メールアドレス <span class="opt">必須</span></label>
+            <input type="email" id="email" name="email" required placeholder="example@mail.com">
+          </div>
+          <div class="fgroup">
+            <label for="category">ご相談の種類 <span class="opt">任意</span></label>
+            <select id="category" name="category">
+              <option value="">選択してください</option>
+              <option>業務アプリ・社内システムを作りたい</option>
+              <option>ナビシリーズ（完成パッケージ）を導入したい</option>
+              <option>ホームページ・サイトを作りたい</option>
+              <option>Excel業務をアプリ化したい</option>
+              <option>まず話を聞いてみたい</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="fgroup">
+            <label for="message">ご相談内容 <span class="opt">必須</span></label>
+            <textarea id="message" name="message" required placeholder="今困っていること、やってみたいこと、なんでも書いてください。まだ漠然としていても大丈夫です。"></textarea>
+          </div>
+          <button type="submit" class="submit">送信する →</button>
+          <p class="note">送信後、自動返信メールをお送りします。2営業日以内に担当よりご連絡いたします。</p>
+        </form>
+      </div>
+
+      <div class="thanks" id="thanks">
+        <div class="ic">✅</div>
+        <h2>送信が完了しました</h2>
+        <p>お問い合わせいただきありがとうございます。<br>2営業日以内にご連絡いたします。</p>
+        <a href="index.html" class="backbtn">トップページへ戻る</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="belworks-white.png" alt="belWorks">
+    <p>belWorks（ベルワークス）｜業務デザイン事業　―　現場が、そのままアプリになる。</p>
+    <p style="margin-top:8px">株式会社ベルアージュ</p>
+    <p style="margin-top:8px;opacity:.5;font-size:.8rem">© 2026 belWorks / 株式会社ベルアージュ</p>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.submit');
+    btn.textContent = '送信中...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('formarea').style.display = 'none';
+        document.getElementById('thanks').style.display = 'block';
+      } else {
+        btn.textContent = '送信に失敗しました。再度お試しください。';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = '送信に失敗しました。再度お試しください。';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>

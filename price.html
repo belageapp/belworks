@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>料金｜belWorks（ベルワークス）</title>
+<meta name="description" content="belWorksの料金プラン。パッケージ導入・業務アプリ化・サイト制作まで、小さく始めて広げられる料金体系です。">
+<style>
+  :root{
+    --ink:#263140;--mut:#5b6673;--line:#e6ebf3;--soft:#f4f7fd;--soft2:#fafbff;
+    --teal:#57c7d4;--blue:#5b8ef0;--purple:#7d6cf0;--purple-d:#6a5cf0;
+    --grad:linear-gradient(120deg,#5b8ef0,#7d6cf0);
+    --shadow:0 18px 46px rgba(91,142,240,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);line-height:1.85;background:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .gtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  h2{font-size:1.85rem;font-weight:800;letter-spacing:.01em}
+  section{padding:76px 0}
+
+  /* header */
+  header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:30}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+  .nav img{height:38px;display:block}
+  .nav .menu{display:flex;gap:26px;font-size:.9rem;font-weight:600;color:var(--mut)}
+  .nav .menu a:hover{color:var(--purple-d)}
+  .nav .navcta{background:var(--grad);color:#fff;padding:9px 20px;border-radius:10px;font-size:.88rem;font-weight:700}
+  @media(max-width:820px){.nav .menu{display:none}}
+
+  /* page hero */
+  .pagehero{padding:60px 0 52px;background:radial-gradient(800px 300px at 90% 0%,rgba(125,108,240,.07),transparent 60%),#fff;border-bottom:1px solid var(--line)}
+  .pagehero .eyebrow{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.14em;color:var(--purple-d);background:var(--soft);padding:5px 14px;border-radius:999px;margin-bottom:14px}
+  .pagehero h1{font-size:2.2rem;font-weight:800;line-height:1.4;margin-bottom:12px}
+  .pagehero p{color:var(--mut);font-size:1.02rem;max-width:580px}
+
+  /* philosophy */
+  .philosophy{background:var(--soft2);border-bottom:1px solid var(--line);padding:44px 0}
+  .phils{display:flex;gap:24px;flex-wrap:wrap}
+  .phil{flex:1;min-width:200px;display:flex;gap:14px;align-items:flex-start}
+  .phil .ic{font-size:1.5rem;flex:none;margin-top:2px}
+  .phil strong{display:block;font-weight:800;margin-bottom:4px}
+  .phil p{font-size:.88rem;color:var(--mut);line-height:1.7}
+
+  /* plan cards */
+  .plangrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+  @media(max-width:860px){.plangrid{grid-template-columns:1fr}}
+  .plan{border:1.5px solid var(--line);border-radius:20px;padding:32px 28px;position:relative;background:#fff;transition:.2s}
+  .plan:hover{box-shadow:var(--shadow);border-color:#c8d5f8}
+  .plan.featured{border-color:var(--blue);box-shadow:var(--shadow)}
+  .plan .badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:.75rem;font-weight:800;padding:4px 16px;border-radius:999px;white-space:nowrap}
+  .plan .pname{font-size:1.1rem;font-weight:800;margin-bottom:6px}
+  .plan .pdesc{font-size:.85rem;color:var(--mut);margin-bottom:20px;line-height:1.65}
+  .plan .price{font-size:2rem;font-weight:800;line-height:1.1;margin-bottom:4px}
+  .plan .price span{font-size:1rem;font-weight:600}
+  .plan .monthly{font-size:.85rem;color:var(--mut);margin-bottom:24px}
+  .plan .divider{height:1px;background:var(--line);margin:20px 0}
+  .plan ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .plan ul li{font-size:.88rem;display:flex;gap:8px;align-items:flex-start;color:var(--mut)}
+  .plan ul li::before{content:"✓";color:var(--blue);font-weight:800;flex:none;margin-top:2px}
+  .plan ul li.strong{color:var(--ink);font-weight:700}
+
+  /* 業務アプリ化 */
+  .custom{background:var(--soft);border-radius:20px;padding:44px;margin-top:0}
+  .custom h3{font-size:1.4rem;font-weight:800;margin-bottom:8px}
+  .custom .sub{color:var(--mut);margin-bottom:28px}
+  .custom .rows{display:flex;flex-direction:column;gap:14px}
+  .custom .crow{display:flex;align-items:center;gap:16px;background:#fff;border-radius:12px;padding:18px 22px;border:1.5px solid var(--line)}
+  .custom .crow .ct{flex:1}
+  .custom .crow .ct strong{display:block;font-weight:800;margin-bottom:2px}
+  .custom .crow .ct p{font-size:.85rem;color:var(--mut)}
+  .custom .crow .cp{font-size:.95rem;font-weight:800;white-space:nowrap;color:var(--purple-d)}
+
+  /* note */
+  .priceNote{background:var(--soft2);border:1.5px solid var(--line);border-radius:14px;padding:24px 28px;margin-top:36px}
+  .priceNote h4{font-weight:800;margin-bottom:10px;font-size:.95rem}
+  .priceNote ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+  .priceNote ul li{font-size:.85rem;color:var(--mut);padding-left:1.2em;position:relative}
+  .priceNote ul li::before{content:"・";position:absolute;left:0}
+
+  /* flow */
+  .flow{background:#fff}
+  .flowsteps{display:flex;gap:0;margin-top:44px;counter-reset:step;flex-wrap:wrap}
+  .fstep{flex:1;min-width:160px;position:relative;padding:28px 20px 28px 0;counter-increment:step}
+  .fstep::before{content:counter(step);font-size:2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:block;margin-bottom:8px}
+  .fstep::after{content:"→";position:absolute;right:0;top:34px;font-size:1.2rem;color:var(--line)}
+  .fstep:last-child::after{display:none}
+  .fstep strong{display:block;font-weight:800;margin-bottom:4px}
+  .fstep p{font-size:.85rem;color:var(--mut)}
+
+  /* CTA */
+  .finalwrap{background:var(--grad);padding:72px 0}
+  .final{text-align:center;color:#fff}
+  .final h2{font-size:1.8rem;font-weight:800;margin-bottom:12px;color:#fff}
+  .final p{opacity:.9;margin-bottom:30px;font-size:1.02rem}
+  .final .btn{background:#fff;color:var(--purple-d);font-weight:800;padding:16px 38px;border-radius:12px;font-size:1rem;display:inline-block;box-shadow:0 10px 28px rgba(0,0,0,.14);transition:.2s}
+  .final .btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(0,0,0,.2)}
+
+  /* footer */
+  footer{background:#1e2738;color:rgba(255,255,255,.75);padding:44px 0 36px;font-size:.88rem;text-align:center}
+  footer img{height:30px;margin-bottom:14px;display:inline-block}
+  footer p{margin-top:6px;opacity:.7}
+  footer a{color:rgba(255,255,255,.6)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav class="nav">
+      <a href="index.html"><img src="belworks-color.png" alt="belWorks"></a>
+      <div class="menu">
+        <a href="index.html#wheels">サービス</a>
+        <a href="price.html">料金</a>
+        <a href="index.html#proof">実績</a>
+        <a href="contact.html">お問い合わせ</a>
+      </div>
+      <a href="contact.html" class="navcta">無料で相談する</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="pagehero">
+  <div class="wrap">
+    <div class="eyebrow">PRICING</div>
+    <h1>小さく始めて、<span class="gtext">広げられる</span>料金。</h1>
+    <p>「どこまでできるか」「予算はいくらかかるか」をまず知りたい方へ。目安をお示しします。詳細はヒアリング後にお見積りします。</p>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<div class="philosophy">
+  <div class="wrap">
+    <div class="phils">
+      <div class="phil"><div class="ic">🔧</div><div><strong>必要な機能だけ</strong><p>使わない機能に費用をかけません。今の業務に必要な部分だけ、小さく始められます。</p></div></div>
+      <div class="phil"><div class="ic">📈</div><div><strong>後から広げられる</strong><p>運用しながら機能を追加できます。最初から全部そろえる必要はありません。</p></div></div>
+      <div class="phil"><div class="ic">💡</div><div><strong>初回相談は無料</strong><p>ヒアリング・方向性の整理・概算見積もりまで費用はかかりません。</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PACKAGE PLANS -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow" style="font-size:.78rem;font-weight:800;letter-spacing:.14em;color:var(--purple-d);background:var(--soft);padding:5px 14px;border-radius:999px;display:inline-block;margin-bottom:14px">両輪① パッケージ導入</div>
+    <h2>ナビシリーズ<br><span class="gtext">3つのプラン</span></h2>
+    <p style="color:var(--mut);margin-top:10px">現場ナビ・まなびナビ・会員ナビ、いずれも共通の料金体系です。</p>
+
+    <div class="plangrid">
+      <!-- ライト -->
+      <div class="plan">
+        <div class="pname">ライト</div>
+        <div class="pdesc">まず動くものを使いたい。小規模・シンプルな運用に。</div>
+        <div class="price">¥100,000<span>〜</span></div>
+        <div class="monthly">＋ 月額 ¥5,000〜</div>
+        <div class="divider"></div>
+        <ul>
+          <li class="strong">基本機能セット（標準テンプレ）</li>
+          <li>ユーザー登録・ログイン</li>
+          <li>メインの記録・管理機能</li>
+          <li>管理者画面</li>
+          <li>操作マニュアル</li>
+        </ul>
+      </div>
+
+      <!-- スタンダード -->
+      <div class="plan featured">
+        <div class="badge">もっとも選ばれます</div>
+        <div class="pname">スタンダード</div>
+        <div class="pdesc">業務全体をカバーしたい。複数スタッフで使う現場に。</div>
+        <div class="price" style="background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">¥250,000<span>〜</span></div>
+        <div class="monthly">＋ 月額 ¥10,000〜</div>
+        <div class="divider"></div>
+        <ul>
+          <li class="strong">ライトの全機能</li>
+          <li class="strong">自組織に合わせたカスタマイズ</li>
+          <li>権限・役割の設定</li>
+          <li>通知・リマインド機能</li>
+          <li>CSV出力</li>
+          <li>導入サポート・研修</li>
+        </ul>
+      </div>
+
+      <!-- フル -->
+      <div class="plan">
+        <div class="pname">フル</div>
+        <div class="pdesc">多店舗・複雑な業務にも対応。拡張性を重視したい方に。</div>
+        <div class="price">¥450,000<span>〜</span></div>
+        <div class="monthly">＋ 月額 ¥20,000〜</div>
+        <div class="divider"></div>
+        <ul>
+          <li class="strong">スタンダードの全機能</li>
+          <li class="strong">多店舗・複数拠点対応</li>
+          <li>ダッシュボード・集計レポート</li>
+          <li>外部サービス連携</li>
+          <li>優先サポート</li>
+          <li>機能追加開発</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="priceNote">
+      <h4>料金に関するご注意</h4>
+      <ul>
+        <li>上記は目安です。業務内容・規模・カスタマイズ範囲によって変動します。</li>
+        <li>月額にはFirebaseなどのインフラ費用・保守・軽微な修正対応が含まれます。</li>
+        <li>詳細はヒアリング後に正式お見積りをご提示します。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 業務アプリ化・その他 -->
+<section style="background:var(--soft2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="eyebrow" style="font-size:.78rem;font-weight:800;letter-spacing:.14em;color:var(--purple-d);background:#fff;padding:5px 14px;border-radius:999px;display:inline-block;margin-bottom:14px">その他のメニュー</div>
+    <h2>用途別の<span class="gtext">料金目安</span></h2>
+    <div class="custom" style="margin-top:32px">
+      <div class="rows">
+        <div class="crow">
+          <div class="ct"><strong>両輪②　今の業務をアプリ化</strong><p>Excel台帳・手作業の一部をアプリに。必要な機能だけ小さく。</p></div>
+          <div class="cp">¥50,000〜<br><span style="font-size:.78rem;font-weight:500;color:var(--mut)">＋月額 ¥3,000〜</span></div>
+        </div>
+        <div class="crow">
+          <div class="ct"><strong>ホームページ制作（静的サイト）</strong><p>belWorks自作のシンプル・高速なサイト。ブログ連携も可。</p></div>
+          <div class="cp">¥100,000〜<br><span style="font-size:.78rem;font-weight:500;color:var(--mut)">＋月額 ¥3,000〜</span></div>
+        </div>
+        <div class="crow">
+          <div class="ct"><strong>WordPress制作</strong><p>更新のしやすさ重視。既存WordPressのカスタマイズも可。</p></div>
+          <div class="cp">¥80,000〜</div>
+        </div>
+        <div class="crow">
+          <div class="ct"><strong>オリジナル受託開発</strong><p>上記に当てはまらない完全オリジナルのアプリ・システム。</p></div>
+          <div class="cp">¥300,000〜<br><span style="font-size:.78rem;font-weight:500;color:var(--mut)">＋月額 ¥20,000〜</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow">
+  <div class="wrap">
+    <h2 style="text-align:center">ご依頼から<span class="gtext">納品まで</span></h2>
+    <p style="text-align:center;color:var(--mut);margin-top:10px;margin-bottom:0">お問い合わせから最短4週間で稼働できます。</p>
+    <div class="flowsteps">
+      <div class="fstep"><strong>① ご相談</strong><p>困りごとを聞かせてください。無料。</p></div>
+      <div class="fstep"><strong>② ヒアリング</strong><p>業務の流れ・欲しい機能を整理。</p></div>
+      <div class="fstep"><strong>③ お見積り</strong><p>機能・費用・スケジュールを提示。</p></div>
+      <div class="fstep"><strong>④ 開発・確認</strong><p>実物を見ながら調整。</p></div>
+      <div class="fstep"><strong>⑤ 納品・サポート</strong><p>引き渡し後も継続サポート。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="finalwrap">
+  <div class="wrap">
+    <div class="final">
+      <h2>まずは、無料でご相談ください。</h2>
+      <p>「予算がどのくらいかかるか知りたい」だけでも大丈夫です。</p>
+      <a href="contact.html" class="btn">お問い合わせ・相談する →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <img src="belworks-white.png" alt="belWorks">
+    <p>belWorks（ベルワークス）｜業務デザイン事業　―　現場が、そのままアプリになる。</p>
+    <p style="margin-top:8px">株式会社ベルアージュ</p>
+    <p style="margin-top:8px;opacity:.5;font-size:.8rem">© 2026 belWorks / 株式会社ベルアージュ</p>
+  </div>
+</footer>
+
+</body>
+</html>
