@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実績・デモ｜belWorks（ベルワークス）</title>
+<meta name="description" content="belWorksの制作実績。すべて自社で実際に稼働中のシステム・サイトです。画面ツアーで実物をご確認いただけます。">
+<style>
+  :root{
+    --ink:#263140;--mut:#5b6673;--line:#e6ebf3;--soft:#f4f7fd;--soft2:#fafbff;
+    --teal:#57c7d4;--blue:#5b8ef0;--purple:#7d6cf0;--purple-d:#6a5cf0;
+    --grad:linear-gradient(120deg,#5b8ef0,#7d6cf0);
+    --shadow:0 18px 46px rgba(91,142,240,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);line-height:1.85;background:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .gtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  /* header */
+  header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:30}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+  .nav img{height:38px;display:block}
+  .nav .menu{display:flex;gap:26px;font-size:.9rem;font-weight:600;color:var(--mut)}
+  .nav .menu a:hover{color:var(--purple-d)}
+  .nav .navcta{background:var(--grad);color:#fff;padding:9px 20px;border-radius:10px;font-size:.88rem;font-weight:700}
+  @media(max-width:820px){.nav .menu{display:none}}
+
+  /* page hero */
+  .pagehero{padding:60px 0 52px;background:radial-gradient(800px 300px at 90% 0%,rgba(125,108,240,.07),transparent 60%),#fff;border-bottom:1px solid var(--line)}
+  .eyebrow{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.14em;color:var(--purple-d);background:var(--soft);padding:5px 14px;border-radius:999px;margin-bottom:14px}
+  .pagehero h1{font-size:2.2rem;font-weight:800;line-height:1.4;margin-bottom:12px}
+  .pagehero p{color:var(--mut);font-size:1.02rem;max-width:600px}
+
+  /* notice */
+  .notice{background:#eef3fd;border-left:4px solid var(--blue);border-radius:0 10px 10px 0;padding:14px 20px;margin:36px 0 0;font-size:.9rem;color:var(--ink)}
+  .notice strong{color:var(--purple-d)}
+
+  /* works grid */
+  section{padding:72px 0}
+  .wgrid{display:flex;flex-direction:column;gap:48px}
+
+  .wcard{border:1.5px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;transition:.2s}
+  .wcard:hover{box-shadow:var(--shadow)}
+  .wcard .top{padding:28px 32px 24px;display:flex;gap:28px;align-items:flex-start}
+  @media(max-width:700px){.wcard .top{flex-direction:column}}
+  .wcard .badge{display:inline-block;font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:999px;margin-bottom:10px}
+  .badge.app{background:#eef3fd;color:var(--purple-d)}
+  .badge.web{background:#e9f6f8;color:#1a8a96}
+  .wcard h3{font-size:1.3rem;font-weight:800;margin-bottom:8px}
+  .wcard .desc{font-size:.92rem;color:var(--mut);line-height:1.8;margin-bottom:16px}
+  .wcard .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+  .wcard .tags span{font-size:.78rem;background:var(--soft);color:var(--mut);padding:4px 12px;border-radius:999px}
+  .wcard .meta{font-size:.82rem;color:var(--mut);display:flex;gap:20px;flex-wrap:wrap}
+  .wcard .meta span{display:flex;align-items:center;gap:5px}
+
+  .wcard .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+  .wcard .abtn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:10px;font-size:.88rem;font-weight:700;transition:.2s}
+  .abtn.primary{background:var(--grad);color:#fff;box-shadow:0 6px 16px rgba(107,92,240,.22)}
+  .abtn.primary:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(107,92,240,.32)}
+  .abtn.ghost{background:#fff;color:var(--purple-d);border:1.5px solid var(--line)}
+  .abtn.ghost:hover{border-color:var(--blue);background:var(--soft)}
+
+  .wcard .screen{flex:none;width:340px;border-left:1px solid var(--line)}
+  @media(max-width:700px){.wcard .screen{width:100%;border-left:none;border-top:1px solid var(--line)}}
+  .wcard .screen .mock{width:100%;aspect-ratio:4/3;background:var(--soft);display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .wcard .screen .mock .inner{width:90%;height:90%;border-radius:10px;background:#fff;box-shadow:0 8px 24px rgba(91,142,240,.14);border:1px solid var(--line);padding:12px;display:flex;flex-direction:column;gap:6px}
+  .mock-bar{height:8px;border-radius:4px;background:var(--line)}
+  .mock-bar.g{background:var(--grad);width:55%}
+  .mock-row{display:flex;gap:6px}
+  .mock-dot{width:24px;height:24px;border-radius:7px;flex:none;background:linear-gradient(120deg,var(--teal),var(--purple))}
+  .mock-lines{flex:1;display:flex;flex-direction:column;gap:4px;justify-content:center}
+  .mock-line{height:7px;border-radius:4px;background:var(--line)}
+  .mock-line.s{width:60%}
+
+  /* divider */
+  .sec-label{font-size:.82rem;font-weight:800;letter-spacing:.1em;color:var(--mut);text-transform:uppercase;margin-bottom:24px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+
+  /* CTA */
+  .finalwrap{background:var(--grad);padding:72px 0}
+  .final{text-align:center;color:#fff}
+  .final h2{font-size:1.8rem;font-weight:800;margin-bottom:12px;color:#fff}
+  .final p{opacity:.9;margin-bottom:30px}
+  .final .btn{background:#fff;color:var(--purple-d);font-weight:800;padding:16px 38px;border-radius:12px;font-size:1rem;display:inline-block;box-shadow:0 10px 28px rgba(0,0,0,.14);transition:.2s}
+  .final .btn:hover{transform:translateY(-2px)}
+
+  /* footer */
+  footer{background:#1e2738;color:rgba(255,255,255,.75);padding:44px 0 36px;font-size:.88rem;text-align:center}
+  footer img{height:30px;margin-bottom:14px;display:inline-block}
+  footer p{margin-top:6px;opacity:.7}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav class="nav">
+      <a href="index.html"><img src="belworks-color.png" alt="belWorks"></a>
+      <div class="menu">
+        <a href="index.html#service">サービス</a>
+        <a href="price.html">料金</a>
+        <a href="works.html">実績</a>
+        <a href="contact.html">お問い合わせ</a>
+      </div>
+      <a href="contact.html" class="navcta">無料で相談する</a>
+    </nav>
+  </div>
+</header>
+
+<div class="pagehero">
+  <div class="wrap">
+    <div class="eyebrow">WORKS</div>
+    <h1>実績 ― <span class="gtext">すべて稼働中の実物</span>です。</h1>
+    <p>机上のサンプルではありません。自社グループで実際に運営しているシステム・サイトです。画面ツアーで実物の動きをご確認いただけます。</p>
+    <div class="notice">
+      <strong>デモについて：</strong>実際のシステムは受講生・会員情報を扱うためログインが必要です。画面ツアーでは主要画面の流れをそのまま再現しています。詳細なデモをご希望の方は<a href="contact.html" style="color:var(--purple-d);font-weight:700;">お問い合わせ</a>ください。
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+
+    <div class="sec-label">アプリ・システム制作</div>
+    <div class="wgrid">
+
+      <!-- まなびナビ -->
+      <div class="wcard">
+        <div class="top">
+          <div style="flex:1">
+            <div class="badge app">アプリ・システム</div>
+            <h3>研修・資格スクール管理システム<br><span style="font-size:1rem;color:var(--mut);font-weight:600;">まなびナビ（ホリスケアアカデミー）</span></h3>
+            <div class="desc">介護職員初任者研修のオンライン申込から受講管理・OJT・修了証発行まで一気通貫で管理。受講生・管理者それぞれの画面を持ち、自動メール・Stripe決済・AEGISC連携まで対応した基幹システムとして稼働中。</div>
+            <div class="tags">
+              <span>オンライン申込</span><span>Stripe決済</span><span>受講管理</span><span>OJT管理</span>
+              <span>修了証発行</span><span>自動メール</span><span>管理者画面</span>
+            </div>
+            <div class="meta">
+              <span>📅 稼働中（2026年〜）</span>
+              <span>👤 受講生・管理者</span>
+              <span>🔧 Firebase / GitHub Pages</span>
+            </div>
+            <div class="actions" style="margin-top:18px">
+              <a href="https://belageapp.github.io/academy/academy_画面ツアー.html" target="_blank" class="abtn primary">▶ 画面ツアーを見る</a>
+              <a href="contact.html" class="abtn ghost">詳細デモを依頼</a>
+            </div>
+          </div>
+          <div class="screen">
+            <div class="mock">
+              <div class="inner">
+                <div class="mock-bar g"></div>
+                <div class="mock-bar" style="width:80%"></div>
+                <div class="mock-row" style="margin-top:4px">
+                  <div class="mock-dot"></div>
+                  <div class="mock-lines"><div class="mock-line"></div><div class="mock-line s"></div></div>
+                </div>
+                <div class="mock-row">
+                  <div class="mock-dot"></div>
+                  <div class="mock-lines"><div class="mock-line"></div><div class="mock-line s"></div></div>
+                </div>
+                <div class="mock-row">
+                  <div class="mock-dot"></div>
+                  <div class="mock-lines"><div class="mock-line"></div><div class="mock-line s"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 現場ナビ -->
+      <div class="wcard">
+        <div class="top">
+          <div style="flex:1">
+            <div class="badge app">アプリ・システム</div>
+            <h3>福祉事業所 業務支援システム<br><span style="font-size:1rem;color:var(--mut);font-weight:600;">現場ナビ（ベルアージュ 放課後デイ等）</span></h3>
+            <div class="desc">放課後等デイサービス・生活介護など多店舗の業務を一元管理。日報・業務速報・スタッフ連絡・記録共有などを社内ポータルとして稼働中。「今の業務をそのままアプリに」の実例。</div>
+            <div class="tags">
+              <span>日報管理</span><span>業務速報</span><span>多店舗対応</span><span>権限管理</span>
+              <span>社内ポータル</span><span>スタッフ連絡</span>
+            </div>
+            <div class="meta">
+              <span>📅 稼働中</span>
+              <span>👤 スタッフ・管理者</span>
+              <span>🔧 Firebase / GitHub Pages</span>
+            </div>
+            <div class="actions" style="margin-top:18px">
+              <a href="contact.html" class="abtn primary">デモ・詳細を依頼する</a>
+            </div>
+          </div>
+          <div class="screen">
+            <div class="mock">
+              <div class="inner">
+                <div class="mock-bar g" style="width:70%"></div>
+                <div class="mock-bar"></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px">
+                  <div style="background:var(--soft);border-radius:6px;padding:8px"><div class="mock-line" style="width:80%"></div><div class="mock-line s" style="margin-top:4px"></div></div>
+                  <div style="background:var(--soft);border-radius:6px;padding:8px"><div class="mock-line" style="width:80%"></div><div class="mock-line s" style="margin-top:4px"></div></div>
+                  <div style="background:var(--soft);border-radius:6px;padding:8px"><div class="mock-line" style="width:80%"></div><div class="mock-line s" style="margin-top:4px"></div></div>
+                  <div style="background:var(--soft);border-radius:6px;padding:8px"><div class="mock-line" style="width:80%"></div><div class="mock-line s" style="margin-top:4px"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 会員ナビ -->
+      <div class="wcard">
+        <div class="top">
+          <div style="flex:1">
+            <div class="badge app">アプリ・システム</div>
+            <h3>会員・団体 管理システム<br><span style="font-size:1rem;color:var(--mut);font-weight:600;">会員ナビ（経営実践研究会 広島）</span></h3>
+            <div class="desc">経営者団体の会員情報・イベント・連絡をアプリで一元化。会員自身がスマホで登録・情報更新でき、管理者は会員一覧・権限管理をブラウザで行う。</div>
+            <div class="tags">
+              <span>会員登録・管理</span><span>権限管理</span><span>スマホ対応</span><span>管理者画面</span>
+            </div>
+            <div class="meta">
+              <span>📅 稼働中</span>
+              <span>👤 会員・管理者</span>
+              <span>🔧 Firebase / GitHub Pages</span>
+            </div>
+            <div class="actions" style="margin-top:18px">
+              <a href="contact.html" class="abtn primary">デモ・詳細を依頼する</a>
+            </div>
+          </div>
+          <div class="screen">
+            <div class="mock">
+              <div class="inner">
+                <div class="mock-bar g" style="width:65%"></div>
+                <div class="mock-bar" style="width:90%"></div>
+                <div class="mock-row" style="margin-top:4px">
+                  <div class="mock-dot"></div>
+                  <div class="mock-lines"><div class="mock-line"></div><div class="mock-line s"></div></div>
+                </div>
+                <div class="mock-row">
+                  <div class="mock-dot"></div>
+                  <div class="mock-lines"><div class="mock-line"></div><div class="mock-line s"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ホームページ・印刷物 -->
+    <div class="sec-label" style="margin-top:60px">ホームページ・印刷物制作</div>
+    <div class="wgrid">
+      <div class="wcard">
+        <div class="top">
+          <div style="flex:1">
+            <div class="badge web">ホームページ</div>
+            <h3>belWorks 公式サイト<br><span style="font-size:1rem;color:var(--mut);font-weight:600;">belworks.jp（このサイト）</span></h3>
+            <div class="desc">belWorks自身のホームページとして制作。カスタムコード（HTML/CSS）で構築し、GitHub Pages＋独自ドメインで公開。高速・シンプル・低コストで運用中。<br>「このサイトのように作れます」という実例でもあります。</div>
+            <div class="tags">
+              <span>静的サイト</span><span>独自ドメイン</span><span>HTTPS対応</span><span>お問い合わせフォーム</span>
+            </div>
+            <div class="meta">
+              <span>📅 2026年公開</span>
+              <span>🔧 HTML/CSS / GitHub Pages</span>
+            </div>
+            <div class="actions" style="margin-top:18px">
+              <a href="index.html" class="abtn ghost">このサイトを見る（今ここ）</a>
+            </div>
+          </div>
+          <div class="screen">
+            <div class="mock">
+              <div class="inner">
+                <div style="height:10px;background:var(--grad);border-radius:4px;width:40%;margin-bottom:8px"></div>
+                <div class="mock-bar" style="width:100%"></div>
+                <div class="mock-bar" style="width:80%;margin-top:4px"></div>
+                <div style="height:34px;background:var(--grad);border-radius:8px;margin-top:8px;opacity:.18"></div>
+                <div class="mock-bar" style="width:60%;margin-top:8px"></div>
+                <div class="mock-bar s" style="width:90%;margin-top:4px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;padding:24px 28px;background:var(--soft);border-radius:14px;border:1.5px solid var(--line)">
+      <p style="font-size:.92rem;color:var(--mut)">📌 <strong style="color:var(--ink)">チラシ・パンフレット・名刺などの制作実績</strong>は順次掲載予定です。制作のご相談は<a href="contact.html" style="color:var(--purple-d);font-weight:700;">お問い合わせ</a>からどうぞ。</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="finalwrap">
+  <div class="wrap">
+    <div class="final">
+      <h2>実物を見ながら、一緒に考えましょう。</h2>
+      <p>「うちの業務に合うか？」「どこまでできる？」— まずは話を聞かせてください。</p>
+      <a href="contact.html" class="btn">無料で相談する →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <img src="belworks-white.png" alt="belWorks">
+    <p>belWorks（ベルワークス）｜業務デザイン事業　―　現場が、そのままアプリになる。</p>
+    <p style="margin-top:8px">株式会社ベルアージュ</p>
+    <p style="margin-top:8px;opacity:.5;font-size:.8rem">© 2026 belWorks / 株式会社ベルアージュ</p>
+  </div>
+</footer>
+
+</body>
+</html>
