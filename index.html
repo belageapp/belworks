@@ -166,6 +166,13 @@
   footer{background:var(--ink);color:#aeb9c9;text-align:center;padding:36px 0;font-size:.85rem}
   footer img{height:24px;margin-bottom:14px;display:inline-block}
   footer a{color:#dfe7ee;text-decoration:underline}
+  /* lightbox */
+  .zoomwrap{position:relative;cursor:zoom-in}
+  .zoom-hint{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.52);color:#fff;border-radius:20px;padding:5px 12px;font-size:.78rem;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none}
+  .zoomwrap:hover .zoom-hint{opacity:1}
+  #lbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;cursor:zoom-out;align-items:center;justify-content:center;padding:20px}
+  #lbox.open{display:flex}
+  #lbox img{max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
 </style>
 </head>
 <body>
@@ -198,7 +205,10 @@
       <div class="marks"><span>✔ 自社の現場で毎日使用中</span><span>✔ 必要な部分だけ小さく</span><span>✔ 月々少額から</span></div>
     </div>
     <div class="visual">
-      <img src="screen-manabi.png" alt="まなびナビ 画面イメージ" style="width:100%;height:auto;display:block;">
+      <div class="zoomwrap" onclick="openLbox('screen-manabi.png')">
+        <img src="screen-manabi.png" alt="まなびナビ 画面イメージ" style="width:100%;height:auto;display:block;">
+        <div class="zoom-hint">🔍 タップで拡大</div>
+      </div>
     </div>
   </div>
 </div>
@@ -373,6 +383,9 @@
     <p style="margin-top:8px;opacity:.6">※ 掲載の料金は目安です。内容により変動します。</p>
   </div>
 </footer>
+
+<div id="lbox" onclick="this.classList.remove('open')"><img src="" alt="拡大"></div>
+<script>function openLbox(s){const l=document.getElementById('lbox');l.querySelector('img').src=s;l.classList.add('open')}</script>
 
 </body>
 </html>

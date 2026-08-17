@@ -111,6 +111,13 @@
   footer{background:#1e2738;color:rgba(255,255,255,.75);padding:44px 0 36px;font-size:.88rem;text-align:center}
   footer img{height:24px;margin-bottom:14px;display:inline-block}
   footer p{margin-top:6px;opacity:.7}
+  /* lightbox */
+  .zoomwrap{position:relative;cursor:zoom-in;width:100%}
+  .zoom-hint{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.52);color:#fff;border-radius:20px;padding:5px 12px;font-size:.78rem;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none}
+  .zoomwrap:hover .zoom-hint{opacity:1}
+  #lbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;cursor:zoom-out;align-items:center;justify-content:center;padding:20px}
+  #lbox.open{display:flex}
+  #lbox img{max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
 </style>
 </head>
 <body>
@@ -169,7 +176,10 @@
             </div>
           </div>
           <div class="screen" style="background:var(--soft);display:flex;align-items:center;justify-content:center;padding:16px 8px">
-            <img src="screen-manabi.png" alt="まなびナビ 管理者・受講生画面イメージ" style="width:100%;height:auto;display:block;">
+            <div class="zoomwrap" onclick="openLbox('screen-manabi.png')">
+              <img src="screen-manabi.png" alt="まなびナビ 管理者・受講生画面イメージ" style="width:100%;height:auto;display:block;">
+              <div class="zoom-hint">🔍 タップで拡大</div>
+            </div>
           </div>
         </div>
       </div>
@@ -311,6 +321,9 @@
     <p style="margin-top:8px;opacity:.5;font-size:.8rem">© 2026 belWorks / 株式会社ベルアージュ</p>
   </div>
 </footer>
+
+<div id="lbox" onclick="this.classList.remove('open')"><img src="" alt="拡大"></div>
+<script>function openLbox(s){const l=document.getElementById('lbox');l.querySelector('img').src=s;l.classList.add('open')}</script>
 
 </body>
 </html>
