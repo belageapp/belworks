@@ -143,9 +143,10 @@
     .custom{padding:20px 16px}
     .custom .crow{flex-direction:column;align-items:flex-start;gap:8px}
     .custom .crow .cp{margin-top:4px;font-size:.9rem}
-    .fstep{min-width:100%;padding:14px 0 0}
+    .flowsteps{flex-direction:column;gap:0}
+    .fstep{min-width:100%;padding:20px 0;border-bottom:1px solid var(--line);text-align:center}
+    .fstep:last-child{border-bottom:none}
     .fstep::after{display:none}
-    .flowsteps{gap:0}
   }
   /* footer */
   footer{background:#1e2738;color:rgba(255,255,255,.75);padding:44px 0 36px;font-size:.88rem;text-align:center}
