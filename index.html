@@ -173,6 +173,24 @@
   footer{background:var(--ink);color:#aeb9c9;text-align:center;padding:36px 0;font-size:.85rem}
   footer img{height:24px;margin-bottom:14px;display:inline-block}
   footer a{color:#dfe7ee;text-decoration:underline}
+  /* mobile */
+  @media(max-width:680px){
+    section{padding:48px 0}
+    .hero{padding:36px 0 28px}
+    .flow{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;padding-bottom:8px;gap:6px}
+    .flow .step{white-space:nowrap;flex-shrink:0}
+    .flow .arrow{flex-shrink:0}
+  }
+  /* table scroll */
+  .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%}
+  @media(max-width:680px){.mtable{min-width:360px}}
+  /* rcard: number+heading inline */
+  .rcard-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .rcard .n{margin-bottom:0;flex-shrink:0}
+  /* dcard: icon+heading inline */
+  .dcard-head{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .dcard-head .ic{font-size:1.5rem;flex-shrink:0;line-height:1}
+  .dcard-head h4{margin:0;font-size:1rem}
   /* lightbox */
   .zoomwrap{position:relative;cursor:zoom-in}
   .zoom-hint{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.52);color:#fff;border-radius:20px;padding:5px 12px;font-size:.78rem;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none}
@@ -243,12 +261,14 @@
       <h3>作り手が、<span class="gtext">現場の当事者</span>です。</h3>
       <p>「コードが書ける会社」ではありません。私たち自身が<strong>介護・福祉・研修の現場を運営</strong>し、その業務を<strong>自分たちでアプリ化</strong>してきました。だから話が早く、現場で本当に使えるものができます。小さな会社だからこそ、現場に密着・速い・翻訳ロスなし。</p>
     </div>
+    <div class="tscroll">
     <table class="mtable">
       <tr><th>　</th><th>中身（現場ノウハウ）</th><th>器（システム）</th></tr>
       <tr><td>大手システム会社</td><td class="no">✕ 現場を知らない</td><td class="yes">○</td></tr>
       <tr><td>経営コンサル</td><td class="yes">○</td><td class="no">✕ 作れない</td></tr>
       <tr class="us"><td>belWorks</td><td class="yes">○ 自分で運営</td><td class="yes">○ 自分で作る</td></tr>
     </table>
+    </div>
   </div>
 </section>
 
@@ -280,11 +300,11 @@
     <h2>こんな<span class="gtext">ご要望に対応</span></h2>
     <p class="lead">アプリ・システムから、ホームページ・サイトまで。現場を知っているから、何が必要かを一緒に考えられます。</p>
     <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
-      <div class="card hover"><div class="ic">🏫</div><h4>福祉事業所（放課後デイ等）</h4><div class="nav">現場ナビ</div><p>実績管理（年次〜日次）・報酬明細（加算内訳を自動算出）・稼働日管理</p></div>
-      <div class="card hover"><div class="ic">🎓</div><h4>研修・資格・スクール</h4><div class="nav">まなびナビ</div><p>オンライン申込〜受講〜実習〜修了証・資格管理・自動リマインド</p></div>
-      <div class="card hover"><div class="ic">👥</div><h4>会員・団体の運営</h4><div class="nav">会員ナビ</div><p>会員名簿・イベント・出欠・役割分担・会費</p></div>
-      <div class="card hover"><div class="ic">📊</div><h4>エクセル業務のアプリ化</h4><div class="nav">業務アプリ化</div><p>今のエクセル台帳を、共有・権限・履歴つきのアプリに</p></div>
-      <div class="card hover"><div class="ic">🌐</div><h4>ホームページ制作</h4><div class="nav">採用・集客・周知</div><p>採用に強いサイト、地域への周知、WordPress・ノーコードにも対応</p></div>
+      <div class="card hover"><div class="dcard-head"><div class="ic">🏫</div><h4>福祉事業所（放課後デイ等）</h4></div><div class="nav">現場ナビ</div><p>実績管理（年次〜日次）・報酬明細（加算内訳を自動算出）・稼働日管理</p></div>
+      <div class="card hover"><div class="dcard-head"><div class="ic">🎓</div><h4>研修・資格・スクール</h4></div><div class="nav">まなびナビ</div><p>オンライン申込〜受講〜実習〜修了証・資格管理・自動リマインド</p></div>
+      <div class="card hover"><div class="dcard-head"><div class="ic">👥</div><h4>会員・団体の運営</h4></div><div class="nav">会員ナビ</div><p>会員名簿・イベント・出欠・役割分担・会費</p></div>
+      <div class="card hover"><div class="dcard-head"><div class="ic">📊</div><h4>エクセル業務のアプリ化</h4></div><div class="nav">業務アプリ化</div><p>今のエクセル台帳を、共有・権限・履歴つきのアプリに</p></div>
+      <div class="card hover"><div class="dcard-head"><div class="ic">🌐</div><h4>ホームページ制作</h4></div><div class="nav">採用・集客・周知</div><p>採用に強いサイト、地域への周知、WordPress・ノーコードにも対応</p></div>
     </div>
   </div>
 </section>
@@ -295,10 +315,10 @@
     <h2>選ばれる<span class="gtext">理由</span></h2>
     <p class="lead">「自分たちが毎日使ってきた実物」が、いちばんの安心です。</p>
     <div class="grid g4">
-      <div class="card rcard"><div class="n">1</div><h4>話が早い</h4><p>私たちも現場を運営しているので、業務をイチから説明する必要がありません。</p></div>
-      <div class="card rcard"><div class="n">2</div><h4>現場が使える</h4><p>シンプルで、ミスが出ない、迷わない。スマホでもパソコンでも。</p></div>
-      <div class="card rcard"><div class="n">3</div><h4>小さく始められる</h4><p>必要な部分だけアプリ化。既存ソフトは置き換えず補完。低コストで導入。</p></div>
-      <div class="card rcard"><div class="n">4</div><h4>実物が土台</h4><p>現場で毎日使い、現場でしか出ない不具合も直してきた"実物"がベースです。</p></div>
+      <div class="card rcard"><div class="rcard-head"><div class="n">1</div><h4>話が早い</h4></div><p>私たちも現場を運営しているので、業務をイチから説明する必要がありません。</p></div>
+      <div class="card rcard"><div class="rcard-head"><div class="n">2</div><h4>現場が使える</h4></div><p>シンプルで、ミスが出ない、迷わない。スマホでもパソコンでも。</p></div>
+      <div class="card rcard"><div class="rcard-head"><div class="n">3</div><h4>小さく始められる</h4></div><p>必要な部分だけアプリ化。既存ソフトは置き換えず補完。低コストで導入。</p></div>
+      <div class="card rcard"><div class="rcard-head"><div class="n">4</div><h4>実物が土台</h4></div><p>現場で毎日使い、現場でしか出ない不具合も直してきた"実物"がベースです。</p></div>
     </div>
   </div>
 </section>
