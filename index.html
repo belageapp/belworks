@@ -175,15 +175,16 @@
   footer a{color:#dfe7ee;text-decoration:underline}
   /* mobile */
   @media(max-width:680px){
-    section{padding:48px 0}
-    .hero{padding:36px 0 28px}
+    section{padding:36px 0}
+    .hero{padding:32px 0 16px}
+    .hero .visual{min-height:0;margin-top:12px}
     .flow{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;padding-bottom:8px;gap:6px}
     .flow .step{white-space:nowrap;flex-shrink:0}
     .flow .arrow{flex-shrink:0}
   }
   /* table scroll */
   .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%}
-  @media(max-width:680px){.mtable{min-width:360px}}
+  .mtable td,.mtable th{white-space:nowrap}
   /* rcard: number+heading inline */
   .rcard-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
   .rcard .n{margin-bottom:0;flex-shrink:0}
